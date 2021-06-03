@@ -1,29 +1,31 @@
-# Socket in C
+# Server-Client-Communication
+This is a self developed basic working model of TCP and UDP server-client communication protocals.
 
-_Sockets are low level endpoint used for processing information across a network.Common networking protocols like HTTP and FTP rely on the sockets underneath to make connection._
+## How To Run
+Step 1. Download the source code to system in zip format or clone repo.
 
-## Client Socket Workflow
-
-**socket()
-|
-connect()
-|
-recv()**
-
-* The client socket is created with a socket() call, and the connected to a remote address with the connect() call, and then finally can retrive data with recv() call.
-
-* The client socket is created with a socket() call, and the connected to a remote address with the connect() call, and then finally can retrive data with recv() call.
-
-## Server Socket Workflow
-
-* On the "server" end of the socket,we need to also create a socket with a socket() call, but we need to bind() that socket to an IP and port where it can then listen() for connections, finally accept() a connection and then send() or recv() data to the other sockets it has connected to.
-
-**socket()
-|
-bind()
-|
-listen()
-|
-accept()**
-
+Step 2. On linux shell navigate to 
 ```
+"Download-Location"/Networking-Project-main/Networking-Project-main/Client_Server_TCP
+```
+Or
+```
+"Download-Location"/Networking-Project-main/Networking-Project-main/Client_Server_UDP
+```
+Step 3. compile the server and client codes using command 
+```
+g++ -o server server.cpp
+```
+```
+g++ -o client client.cpp
+```
+Step 4. run Server with a server port using command 
+```
+./server 2000
+```
+Step 4. run Client with name of server and server port using command 
+```
+./client localhost 2000
+```
+## Tech Stack Used
+All the functionalities are programmed in C++ language with the help of socket programming libraries.
